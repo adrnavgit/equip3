@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Lots</title>
+    <!--Script-->
+    <script src="scriptLot.js" defer></script>
+    <style>
+       table, td,th{
+            border: solid;
+            border-collapse: collapse;
+        }
+       
+    </style>
+</head>
+<!--Body-->
+<body>
+    <!--Información de los lots-->
+    <div id="cont">
+        <h2>Gestión de Lots</h2>
+        <!--Formulario para ingresar los datos del lote-->
+        <form id="lotForm" novalidate>
+            <label for="productId">ID del Producto:</label>
+            <input type="number" id="productId" placeholder="789">
+            <span id="productIdError" class="error"></span>
+            <br><br>
+            
+            <!--Fecha de Producción-->
+            <label for="productionDate">Fecha de Producción:</label>
+            <input type="date" id="productionDate">
+            <span id="productionDateError" class="error"></span>
+            <br><br>
+            
+            <!-- Fecha de Expiración-->
+            <label for="expirationDate">Fecha de Expiración:</label>
+            <input type="date" id="expirationDate">
+            <span id="expirationDateError" class="error"></span>
+            <br><br>
+            
+            <!-- Botones -->
+            <button id="crearLot" type="button">Crear Lot</button>
+            <button id="modificarLot" type="button" style="display: none;">Modificar Lot</button>
+        </form>
+        
+        <!-- Tabla para mostrar los lots -->
+        <h3>Lista de Lots</h3>
+        <table id="tablaLots">
+            <thead>
+                <tr>
+                    <th>ID del Producto</th>
+                    <th>Fecha de Producción</th>
+                    <th>Fecha de Expiración</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="listaLots"></tbody>
+        </table>
+    </div>
+</body>
+</html>

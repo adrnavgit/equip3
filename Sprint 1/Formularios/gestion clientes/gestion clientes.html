@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión clientes</title>
+    <script src="script.js" defer></script>
+</head>
+<style>
+    table{
+        border: solid black 1px;
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+    }  
+    th, td{
+        width: 5%;
+        border: solid black 1px;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <div id="cont">
+        <h2>Gestión clientes</h2>
+        <form id="userForm" method="POST" novalidate>
+            <label for="username">Nombre o razón social:</label>
+            <input type="text" id="username" placeholder="Ernesto" required pattern="[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s]{1,49}">
+            <span id="usernameError" class="error"></span>
+            <br>
+
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" placeholder="c/ ejemplo, 42" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\s,.-]{2,100}">
+            <span id="domicilioError" class="error"></span>
+            <br>
+
+            <label for="dni">DNI/NIF:</label>
+            <input type="text" id="dni" placeholder="23947534H" required pattern="^[XYZ]?\d{7,8}[A-Z]$">
+            <span id="dniError" class="error"></span>
+            <br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" placeholder="654785453" required pattern="^\d{9}$">
+            <span id="telefonoError" class="error"></span>
+            <br>
+
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" placeholder="ejemplo@gmail.com" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+            <span id="correoError" class="error"></span>
+            <br>
+            <br>
+
+            <button type="button" onclick="darDeAlta()">Dar de alta</button>
+            <button id="guardarCambios" style="display: none;" type="button" onclick="guardarModificacionClientes()">Guardar cambios</button>
+        </form>
+    </div>
+
+    <br>
+
+    <table id="clientesTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Domicilio</th>
+                <th>DNI/NIF</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Acción 1</th>
+                <th>Acción 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--los clientes se van agregando aqui-->
+        </tbody>
+    </table>
+</body>
+</html>

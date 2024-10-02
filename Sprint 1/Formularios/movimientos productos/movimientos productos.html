@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos de productos</title>
+    <script src="script.js" defer></script>
+</head>
+<style>
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 5%;
+    }
+</style>
+<body>
+    <h1>Movimientos de productos</h1>
+
+    <form id="movementForm">
+        <label for="operator">Operario:</label>
+        <input type="text" id="operator" required>
+
+        <label for="product">Producto:</label>
+        <input type="text" id="product" required>
+
+        <label for="quantity">Cantidad:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="locationFrom">Ubicación de extracción:</label>
+        <input type="text" id="locationFrom" required>
+
+        <label for="locationTo">Ubicación de dipósito:</label>
+        <input type="text" id="locationTo" required>
+
+        <select id="entity" required>
+            <option value="" disabled selected>Selecciona una entidad</option>
+            <option value="Enviamiento">Líneas de ordenes de enviamiento</option>
+            <option value="Recepción">Líneas de ordenes de recepción</option>
+            <option value="Configuración">Líneas de configuración de inventario</option>
+        </select>
+
+        <br>
+        <br>
+
+        <button type="submit">Registrar movimiento</button>
+    </form>
+
+    <br>
+    <br>
+
+    <table id="movementsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Operario</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Ubicación d'extracción</th>
+                <th>Ubicación de depósito</th>
+                <th>Entidad</th>
+                <th>Fecha i hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--aqui se irán añadiendo los movimientos-->
+        </tbody>
+    </table>
+</body>
+</html>

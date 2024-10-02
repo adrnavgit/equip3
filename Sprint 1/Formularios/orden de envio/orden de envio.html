@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de envío</title>
+    <script src="script.js" defer></script>
+</head>
+<style>
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 1%;
+    }
+</style>
+<body>
+    <h1>Orden de envío</h1>
+
+    <form id="formEnvio">
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" pattern=".{2,30}" title="El nombre del cliente debe tener entre 2 y 30 caracteres" required>
+
+        <br>
+        <br>
+
+        <label for="producto">Producto:</label>
+        <input type="text" id="producto" pattern=".{2,20}" title="El nombre del producto debe tener entre 2 y 20 caracteres" required>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" pattern=".{10,300}" title="La descripción debe tener entre 10 y 300 caracteres" required>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" title="La cantidad debe ser como mínimo 1" required>
+
+        <label for="id">ID:</label>
+        <input type="number" id="id" min="1" title="El ID debe ser como mínimo 1" required>
+
+        <select id="estado" title="Seleccione el estado en el que se encuentra el producto" required>
+            <option value="" disabled selected>Selecciona un estado</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="preparando">Preparandose</option>
+            <option value="preparado">Preparado</option>
+        </select>
+
+        <br>
+        <br>
+
+        <label for="operario">Operario:</label>
+        <input type="text" id="operario" pattern=".{2,30}" title="El nombre del operario debe tener entre 2 y 30 caracteres" required>
+
+        <label for="transportista">Transportista:</label>
+        <input type="text" id="transportista" pattern=".{2,30}" title="El nombre del transportista debe tener entre 2 y 30 caracteres" required>
+
+        <br>
+        <br>
+
+        <button type="submit">Registrar envío</button>
+    </form>
+
+    <br>
+    <br>
+
+    <table style="display: none;" id="tablaEnvios">
+        <thead>
+            <tr>
+                <th>Nº envío</th>
+                <th>Cliente</th>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>ID</th>
+                <th>Estado</th>
+                <th>Operario</th>
+                <th>Fecha y hora</th>
+                <th>Transportista</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--en esta parte se irán añadiendo las órdenes de envío-->
+        </tbody>
+    </table>
+</body>
+</html>
